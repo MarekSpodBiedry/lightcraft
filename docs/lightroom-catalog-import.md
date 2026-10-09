@@ -38,8 +38,10 @@ WITHOUT ROWID or virtual table produces an explicit error, handled as a warning 
 Develop settings reuse the existing XMP/preset mapper. Supported sliders, curves and supported
 mask structures remain editable, but this is approximate rendering: camera profiles, Adobe AI
 models, some masking/retouch fields and process-version algorithms are not reproduced. Unmapped
-fields are reported. When a recovery archive is saved, it retains source settings/history/snapshots
-and original smart-collection rules. Smart collections become regular albums with current
+fields are reported. Catalog settings have no `HasCrop`, so any crop edge or angle imports as a
+crop. Crops on rotated (portrait) photos and crops with a straighten angle are not yet converted
+to LightCraft's frame and can come out the wrong shape (#483). When a recovery archive is saved,
+it retains source settings/history/snapshots and original smart-collection rules. Smart collections become regular albums with current
 membership. Archived history and snapshots are source data, not native LightCraft history yet.
 Lightroom's `-999999` deferred-adjustment sentinel is omitted from both catalog and XMP mappings;
 it is reported, included in any saved archive, and never clamped into a real slider value. Deferred Adobe Auto Tone
